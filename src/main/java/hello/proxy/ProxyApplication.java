@@ -1,5 +1,6 @@
 package hello.proxy;
 
+import hello.proxy.app.v4_postprocessor.BeanPostProcessorConfig;
 import hello.proxy.config.AppV1Config;
 import hello.proxy.config.AppV2Config;
 import hello.proxy.config.v1_proxy.ConcreteProxyConfig;
@@ -20,8 +21,9 @@ import org.springframework.context.annotation.Import;
 //@Import(InterfaceProxyConfig.class)
 //@Import(DynamicProxyBasicConfig.class)
 //@Import(DynamicProxyFilterConfig.class)
-@Import(ProxyFactoryConfigV2.class)
-@SpringBootApplication(scanBasePackages = "hello.proxy.config.v3_proxyfactory") //주의
+//@Import(ProxyFactoryConfigV2.class)
+@Import(BeanPostProcessorConfig.class)
+@SpringBootApplication(scanBasePackages = "hello.proxy.app") //주의
 public class ProxyApplication {
 
 	public static void main(String[] args) {
